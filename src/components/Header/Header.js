@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import { COLORS, WEIGHTS } from '../../constants';
+import { COLORS, WEIGHTS, QUERIES } from '../../constants';
 import Logo from '../Logo';
+import Icon from '../Icon';
 import SuperHeader from '../SuperHeader';
 import MobileMenu from '../MobileMenu';
 
@@ -29,7 +30,11 @@ const Header = () => {
           <NavLink href="/kids">Kids</NavLink>
           <NavLink href="/collections">Collections</NavLink>
         </Nav>
-        <Side />
+        <MobileIconWrapper>
+          <Icon id='menu'/>
+          <Icon id='search'/>
+          <Icon id='shopping-bag'/>
+        </MobileIconWrapper>
       </MainHeader>
 
       <MobileMenu
@@ -52,6 +57,10 @@ const Nav = styled.nav`
   display: flex;
   gap: 48px;
   margin: 0px 48px;
+
+  @media ${QUERIES.laptopAndDown} {
+    display: none;
+  }
 `;
 
 const Side = styled.div`
@@ -67,6 +76,18 @@ const NavLink = styled.a`
 
   &:first-of-type {
     color: ${COLORS.secondary};
+  }
+`;
+
+const MobileIconWrapper = styled.div`
+  display: none;
+  flex: 1;
+
+  @media ${QUERIES.laptopAndDown} {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: baseline;
+    gap: clamp(1.375rem, 1.7vw + 0.732rem, 2.125rem);
   }
 `;
 
