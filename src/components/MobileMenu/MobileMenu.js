@@ -72,11 +72,11 @@ const Nav = styled.nav`
 const NavLink = styled.a`
   font-weight: ${WEIGHTS.medium};
   font-size: ${18 / 16}rem;
-  color: ${COLORS.gray[900]};
+  color: var(--gray-900);
   text-decoration: none;
 
   &:first-of-type {
-    color: ${COLORS.secondary};
+    color: var(--secondary);
   }
 `;
 
@@ -90,7 +90,7 @@ const Footer = styled.footer`
 
 const FooterLink = styled.a`
   font-weight: ${WEIGHTS.normal};
-  color: ${COLORS.gray[700]};
+  color: var(--gray-700);
   text-decoration: none;
 `;
 
