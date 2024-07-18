@@ -31,7 +31,9 @@ const Header = () => {
           <NavLink href="/collections">Collections</NavLink>
         </Nav>
         <MobileIconWrapper>
-          <Icon id='menu'/>
+          <MobileMenuButton onClick={() => setShowMobileMenu(true)}>
+            <Icon id='menu'/>
+          </MobileMenuButton>
           <Icon id='search'/>
           <Icon id='shopping-bag'/>
         </MobileIconWrapper>
@@ -89,6 +91,12 @@ const MobileIconWrapper = styled.div`
     align-items: baseline;
     gap: clamp(1.375rem, 1.7vw + 0.732rem, 2.125rem);
   }
+`;
+
+const MobileMenuButton = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 `;
 
 export default Header;
